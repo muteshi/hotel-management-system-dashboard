@@ -1,0 +1,77 @@
+{
+  "name": "marvellous-ventures-admin",
+  "homepage": "https://marvellousventures.com/dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@reduxjs/toolkit": "^1.4.0",
+    "@types/react-bootstrap": "^1.0.1",
+    "axios": "^0.19.2",
+    "chart.js": "^2.8.0",
+    "feather-icons": "^4.28.0",
+    "fibers": "^5.0.0",
+    "joi-browser": "^13.4.0",
+    "jquery": "^3.5.1",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.14.1",
+    "prop-types": "^15.7.2",
+    "react-chartjs-2": "^2.9.0",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-countdown-now": "^2.1.2",
+    "react-countup": "^4.3.3",
+    "react-datepicker": "^3.0.0",
+    "react-fade-in": "^1.1.0",
+    "react-feather": "^2.0.8",
+    "react-image-lightbox": "^5.1.1",
+    "react-images-upload": "^1.2.8",
+    "react-placeholder": "^4.0.3",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-router-scroll-4": "^1.0.0-beta.2",
+    "react-scripts": "^3.4.1",
+    "react-select": "^3.1.0",
+    "react-slick": "^0.26.1",
+    "react-switch-lang": "^1.0.2",
+    "react-table": "^7.2.2",
+    "react-times": "^3.1.12",
+    "react-toastify": "^6.0.8",
+    "reactstrap": "^8.5.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.26.9",
+    "semantic-ui-react": "^1.1.1",
+    "slick-carousel": "^1.8.1",
+    "sweetalert": "^2.1.2",
+    "typescript": "^3.9.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "moment": "^2.27.0",
+    "moment-timezone": "^0.5.31",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
