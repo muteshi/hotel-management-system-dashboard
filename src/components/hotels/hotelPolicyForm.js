@@ -57,13 +57,8 @@ class HotelPolicyForm extends Form {
     const fullDate = new Date();
     const d = moment(fullDate).format("MM/DD/YYYY"); //date
     //combine date with time
-    const check_in = moment(d + " " + hotel.checkin, "DD/MM/YYYY HH:mm").format(
-      "YYYY-MM-DD HH:mm"
-    );
-    const check_out = moment(
-      d + " " + hotel.checkout,
-      "DD/MM/YYYY HH:mm"
-    ).format("YYYY-MM-DD HH:mm");
+    const check_in = new Date(d + " " + hotel.checkin);
+    const check_out = new Date(d + " " + hotel.checkout);
     return {
       checkin: hotel.checkin ? new Date(check_in) : new Date(),
       checkout: hotel.checkout ? new Date(check_out) : new Date(),
