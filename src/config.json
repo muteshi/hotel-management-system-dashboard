@@ -1,5 +1,5 @@
 {
-  "apiUrl": "http://marvellousventures.com:8000/api",
+  "apiUrl": "https://marvellousventures.com/api",
   "apiHotelUrl": "https://marvellousventures.com/api/account/users/",
   "hotelUrl": "/hotel/",
   "pageSize": 10
