@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import _ from "lodash";
 import auth from "../../services/authService";
 import SearchBox from "../common/searchBox";
 import ListGroup from "../common/listGroup";
@@ -8,7 +9,6 @@ import HotelsTable from "../../components/hotels/hotelsTable";
 import Pagination from "../common/pagination";
 import { paginate } from "../../utils/paginate";
 import { pageSize } from "../../config.json";
-import _ from "lodash";
 import { connect } from "react-redux";
 import * as actions from "../../store/actions/index";
 const newHotelCreateLink = `${process.env.PUBLIC_URL}/dashboard/home/hotels/new-hotel`;
@@ -72,9 +72,10 @@ class Hotels extends Component {
     let filtered = this.props.hotels;
     if (searchQuery)
       filtered = this.props.hotels.filter((h) =>
-        h.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+        h.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
-    else if (selectedHotelType && selectedHotelType.id)
+
+    if (selectedHotelType && selectedHotelType.id)
       filtered = this.props.hotels.filter(
         (h) => h.hotel_type_id === selectedHotelType.id
       );
@@ -96,14 +97,14 @@ class Hotels extends Component {
 
     const { pageSize, sortColumn, currentPage } = this.state;
     const { user } = this.state;
-    if (totalCount === 0)
+    if ((totalCount === 0) & !this.props.loading)
       return (
         <p>
-          There are no hotels in the database.{" "}
+          There are no hotels in the system.{" "}
           <Link to={newHotelCreateLink}>Create hotel</Link>
         </p>
       );
-    const hotelsTable = (
+    const loadedhotelsTable = (
       <div className="container">
         <div className="row">
           <div className="col-sm-3">
@@ -150,7 +151,7 @@ class Hotels extends Component {
         </div>
       </div>
     );
-    return this.props.loading ? <Loader /> : hotelsTable;
+    return this.props.loading ? <Loader /> : loadedhotelsTable;
   }
 }
 const mapStateToProps = (state) => ({
