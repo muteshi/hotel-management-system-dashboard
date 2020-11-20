@@ -68,7 +68,7 @@ class UploadImages extends Component {
                     label=""
                     buttonText="Upload Images"
                     onChange={this.onDrop}
-                    imgExtension={[".jpg", ".jpeg", ".png"]}
+                    imgExtension={[".jpg", ".jpeg", ".png", ".webp"]}
                     maxFileSize={1048576}
                     fileSizeError=" file size is too big"
                   />
