@@ -7,7 +7,7 @@ const baseURL = apiUrl;
 
 const axiosInstance = axios.create({
   baseURL: baseURL,
-  timeout: 5000,
+  // timeout: 5000,
   headers: {
     Authorization: localStorage.getItem("access_token")
       ? "JWT " + localStorage.getItem("access_token")
