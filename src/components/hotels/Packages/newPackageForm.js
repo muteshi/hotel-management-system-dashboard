@@ -22,7 +22,7 @@ class NewPackageForm extends Form {
   schema = {
     title: Joi.string().required().label("Name of the package"),
     description: Joi.string().required().label("Brief Description"),
-    package_type: Joi.string(),
+    package_type: Joi.number(),
     slug: Joi.string(),
     country: Joi.string().required().label("Country"),
     city: Joi.string().required().label("City/Town"),
