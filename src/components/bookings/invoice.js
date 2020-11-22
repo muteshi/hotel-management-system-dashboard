@@ -55,9 +55,11 @@ class Invoice extends Component {
         " -" + item.total_guests * item.qty + " max" + guest_or_guests
       }`;
 
-      const packageItemsDes = `${item.name}${
+      const packageItemsDes = `${item.hotel_name}${
         " -" + item.total_guests + guest_or_guests
       }`;
+
+      const packageDetails = `${item.meal_plan}`;
 
       const conferenceRoomItems = `${item.stay_duration + day_or_days}${
         " x " +
@@ -71,17 +73,19 @@ class Invoice extends Component {
         " x " + item.stay_duration + night_or_nights
       }${" x " + formatter.format(item.room_Price)}`;
 
-      const packageItems = `${formatter.format(
-        item.package_Price
-      )} per person sharing`;
+      const packageItems = `${formatter.format(item.package_Price)} pps`;
       return (
         <tr key={item.id}>
           <td className="col-4 border-0">
-            {item.is_conference_room
-              ? conferenceRoomItemsDes
-              : item.hotel_package
-              ? packageItemsDes
-              : roomItemsDes}
+            {item.is_conference_room ? (
+              conferenceRoomItemsDes
+            ) : item.hotel_package ? (
+              <p>
+                {packageItemsDes} <br /> <strong>{packageDetails}</strong>
+              </p>
+            ) : (
+              roomItemsDes
+            )}
           </td>
           <td className="col-6 text-right border-0">
             {item.is_conference_room

@@ -149,7 +149,9 @@ class BookingUpdateForm extends Form {
     let bookingItems = items.map((item) => {
       return (
         <tr key={item.id}>
-          <th scope="row">{!item.room_Name ? item.name : item.room_Name}</th>
+          <th scope="row">
+            {!item.room_Name ? item.hotel_name : item.room_Name}
+          </th>
           <td>{item.qty}</td>
           <td>{item.total_guests}</td>
           <td>{item.stay_duration}</td>
